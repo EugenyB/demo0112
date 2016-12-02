@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="demo.controller.Controller">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="First" />
+                        <MenuItem mnemonicParsing="false" text="Second" />
+                        <MenuItem mnemonicParsing="false" text="Third" />
+                        <SeparatorMenuItem />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+   <left>
+      <VBox prefHeight="368.0" prefWidth="195.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField style="-fx-font-size: 20pt;" fx:id="filterTextField"/>
+            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="184.0" text="Filter" style="-fx-font-size: 20pt;" onAction="#filter"/>
+            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="184.0" text="Filter" style="-fx-font-size: 20pt;" onAction="#filterBySalary"/>
+            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="184.0" text="Reset" style="-fx-font-size: 20pt;" onAction="#resetFilter"/>
+            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="184.0" text="Sort" style="-fx-font-size: 20pt;" onAction="#sort"/>
+            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="184.0" text="Sort" style="-fx-font-size: 20pt;" onAction="#minimumSalary"/>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></VBox>
+   </left>
+   <center>
+      <TableView fx:id="personTable" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 20pt;" BorderPane.alignment="CENTER">
+          <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="200.0" text="name" />
+          <TableColumn fx:id="ageColumn" prefWidth="100.0" text="age" />
+          <TableColumn fx:id="salaryColumn" prefWidth="100.0" text="salary" />
+          <TableColumn fx:id="cityColumn" prefWidth="200.0" text="city" />
+          </columns>
+      </TableView>
+   </center>
+
+</BorderPane>
